@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element audit="true" extends="task" label="NeedIt" max_length="40" name="x_58872_needit_needit" type="collection">
+        <element label="Novo campo 1" max_length="40" name="novo_campo_1" type="integer"/>
+        <element label="Novo campo 2" max_length="40" name="novo_campo_2" type="integer"/>
+        <element attributes="edge_encryption_enabled=true" label="Quando necessário" mandatory="true" max_length="40" name="u_calendar_date_time_1" type="calendar_date_time"/>
+        <element attributes="edge_encryption_enabled=true" choice="3" default="legal" label="Tipo de solicitação" mandatory="true" max_length="40" name="u_choice_4" type="string">
+            <choice>
+                <element inactive_on_update="false" label="Recursos Humanos" language="pb" sequence="0" value="hr"/>
+                <element inactive_on_update="false" label="Instalações" language="pb" sequence="1" value="instalações"/>
+                <element inactive_on_update="false" label="Legal" language="pb" sequence="2" value="legal"/>
+                <element inactive_on_update="false" label="Sua escolha de departamento" language="pb" sequence="3" value="sua_escolha"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" choice="1" default="legal1" label="O que é necessário" mandatory="true" max_length="40" name="u_choice_5" type="string">
+            <choice>
+                <element inactive_on_update="false" label="Recursos Humanos 1" language="pb" sequence="0" value="hr1"/>
+                <element inactive_on_update="false" label="Recursos Humanos 2" language="pb" sequence="1" value="hr2"/>
+                <element inactive_on_update="false" label="Instalações 1" language="pb" sequence="2" value="instalações1"/>
+                <element inactive_on_update="false" label="Instalações 2" language="pb" sequence="3" value="instalações2"/>
+                <element inactive_on_update="false" label="Legal 1" language="pb" sequence="4" value="legal1"/>
+                <element inactive_on_update="false" label="Legal 2" language="pb" sequence="5" value="legal2"/>
+                <element inactive_on_update="false" label="Sua escolha de departamento 1" language="pb" sequence="6" value="your_choice1"/>
+                <element inactive_on_update="false" label="Sua escolha de departamento 2" language="pb" sequence="7" value="sua_escolha2"/>
+            </choice>
+        </element>
+        <element label="Novo campo 3" max_length="40" name="u_integer_1" type="integer"/>
+        <element attributes="encode_utf8=false" label="Solicitado para" mandatory="true" max_length="32" name="u_reference_2" reference="sys_user" type="reference"/>
+    </element>
+</database>
