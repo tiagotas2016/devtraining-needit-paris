@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sysauto_script">
+    <sysauto_script action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <business_calendar/>
+        <condition/>
+        <conditional>false</conditional>
+        <entered_time>1970-01-01 00:00:00</entered_time>
+        <name>Encontre e feche tarefas de necessidade muito atrasadas</name>
+        <offset/>
+        <offset_type/>
+        <run_as display_value="System Administrator">d973e31cdb19601028ed5608689619ad</run_as>
+        <run_as_tz/>
+        <run_dayofmonth>1</run_dayofmonth>
+        <run_dayofweek>1</run_dayofweek>
+        <run_period/>
+        <run_start>2021-01-14 00:30:04</run_start>
+        <run_time>1970-01-01 08:05:00</run_time>
+        <run_type>daily</run_type>
+        <script><![CDATA[// Recupere o valor da propriedade do aplicativo x_58872_needit.autoCloseOverdue
+	var howLongToClose = gs.getProperty('x_58872_needit.autoCloseOverdue');
+		
+	// Consultar o banco de dados para registros de Tarefa Necessária com campo Data de vencimento
+	// valores anteriores ao número de dias definido em x_58872_needit.autoCloseOverdue
+	// Propriedade do aplicativo. Apenas os registros de tarefa NeedIt de retorno têm um valor de estado de
+	// Aberto ou Trabalho em andamento. Feche as Tarefas NeedIt e atualize
+	// as notas do NeedIt Task Work.
+	var overdueNITasks = new GlideRecord('x_58872_needit_needit_task');
+	overdueNITasks.addQuery('due_date','<=',gs.daysAgo(howLongToClose));
+	overdueNITasks.addQuery('state','<',3);
+		
+	overdueNITasks.query();
+	// Grava uma mensagem de log para cada Registro de Tarefa NeedIt muito atrasado.  
+	// Adicione uma nota ao campo Notas de trabalho. Altere o estado para Fechado Incompleto.
+	// Atualize o registro da Tarefa NeedIt.
+	while(overdueNITasks.next()){
+		gs.info("Auto close NeedIt Task record = " + overdueNITasks.number);
+		overdueNITasks.work_notes = " Registro fechado porque estava muito além da data de vencimento..";
+		overdueNITasks.state = 4;
+		overdueNITasks.update();
+	}]]></script>
+        <sys_class_name>sysauto_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-01-14 00:32:53</sys_created_on>
+        <sys_id>bb3bdf3bdb6d201028ed56086896191c</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Encontre e feche tarefas de necessidade muito atrasadas</sys_name>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>sysauto_script_bb3bdf3bdb6d201028ed56086896191c</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-01-14 00:34:16</sys_updated_on>
+        <time_zone/>
+        <upgrade_safe>false</upgrade_safe>
+    </sysauto_script>
+</record_update>
