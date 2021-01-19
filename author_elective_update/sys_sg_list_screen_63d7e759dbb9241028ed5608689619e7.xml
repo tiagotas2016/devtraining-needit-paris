@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_list_screen">
+    <sys_sg_list_screen action="DELETE">
+        <available_offline>false</available_offline>
+        <description>Visualize todos os registros de NeedIt abertos para um tipo de solicitação específico</description>
+        <dynamic_prefetch_count/>
+        <fetch_type>on_demand</fetch_type>
+        <filter/>
+        <hide_filters>false</hide_filters>
+        <hide_screen_name>false</hide_screen_name>
+        <icon display_value="icon-Save">27d72319dbb9241028ed56086896194f</icon>
+        <name>Por tipo de solicitação</name>
+        <roles_override/>
+        <sys_class_name>sys_sg_list_screen</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-01-18 17:16:06</sys_created_on>
+        <sys_id>63d7e759dbb9241028ed5608689619e7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Por tipo de solicitação</sys_name>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>sys_sg_list_screen_63d7e759dbb9241028ed5608689619e7</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-01-18 17:16:06</sys_updated_on>
+    </sys_sg_list_screen>
+    <sys_translated_text action="DELETE" query="documentkey=63d7e759dbb9241028ed5608689619e7"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</application>
+        <file_path/>
+        <instance_id>7ef60deedb0f1344439ef70fbf96195f</instance_id>
+        <instance_name>dev63758</instance_name>
+        <name>sys_sg_list_screen_63d7e759dbb9241028ed5608689619e7</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_list_screen"><sys_sg_list_screen action="INSERT_OR_UPDATE"><available_offline>false</available_offline><description>Visualize todos os registros de NeedIt abertos para um tipo de solicitação específico</description><dynamic_prefetch_count/><fetch_type>on_demand</fetch_type><filter/><hide_filters>false</hide_filters><hide_screen_name>false</hide_screen_name><icon display_value="icon-Save">27d72319dbb9241028ed56086896194f</icon><name>Por tipo de solicitação</name><roles_override/><sys_class_name>sys_sg_list_screen</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2021-01-18 17:16:06</sys_created_on><sys_id>63d7e759dbb9241028ed5608689619e7</sys_id><sys_mod_count>0</sys_mod_count><sys_name>Por tipo de solicitação</sys_name><sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package><sys_policy/><sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope><sys_update_name>sys_sg_list_screen_63d7e759dbb9241028ed5608689619e7</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2021-01-18 17:16:06</sys_updated_on></sys_sg_list_screen><sys_translated_text action="delete_multiple" query="documentkey=63d7e759dbb9241028ed5608689619e7"/></record_update>]]></payload>
+        <payload_hash>-321135391</payload_hash>
+        <record_name>Por tipo de solicitação</record_name>
+        <reverted_from/>
+        <source>d0910532dbd5201028ed560868961935</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-01-18 17:16:06</sys_created_on>
+        <sys_id>63d7e759dbb9241028ed5608689619ea</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>177167f21b30000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-01-18 17:16:06</sys_updated_on>
+        <type>List screen</type>
+        <update_guid>abd7e75926b92410052ead737d5885e9</update_guid>
+        <update_guid_history>abd7e75926b92410052ead737d5885e9:-321135391</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-01-18 21:24:25</sys_created_on>
+        <sys_db_object display_value="" name="sys_sg_list_screen">sys_sg_list_screen</sys_db_object>
+        <sys_id>0f011e8a5f8f4fee815b45583c9362a1</sys_id>
+        <sys_metadata>63d7e759dbb9241028ed5608689619e7</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Por tipo de solicitação</sys_name>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_scope_delete display_value="">94872a8897db403e8ee69a431de2fca4</sys_scope_delete>
+        <sys_update_name>sys_sg_list_screen_63d7e759dbb9241028ed5608689619e7</sys_update_name>
+        <sys_update_version display_value="sys_sg_list_screen_63d7e759dbb9241028ed5608689619e7">63d7e759dbb9241028ed5608689619ea</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-01-18 21:24:25</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

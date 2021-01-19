@@ -6,7 +6,9 @@
         <conditional>false</conditional>
         <entered_time/>
         <name>Generate Random NeedIt Records</name>
-        <run_as display_value="System Administrator">6816f79cc0a8016401c5a33be04be441</run_as>
+        <offset/>
+        <offset_type/>
+        <run_as display_value="Tiago de Souza">6816f79cc0a8016401c5a33be04be441</run_as>
         <run_as_tz/>
         <run_dayofmonth>1</run_dayofmonth>
         <run_dayofweek>1</run_dayofweek>
@@ -14,10 +16,10 @@
         <run_start>2019-07-24 14:52:47</run_start>
         <run_time>1970-01-01 08:00:00</run_time>
         <run_type>on_demand</run_type>
-        <script><![CDATA[//Number of NeedIt records to create
-	var recordsToMake = 0;
+        <script><![CDATA[//Número de registros NeedIt para criar
+	var recordsToMake = 500;
 	
-	// Declare and initialize variables used in the script
+	// Declare e inicialize as variáveis ​​usadas no script
 	var genNIRec;
 	var i;
 	var tableName = "x_58872_needit_needit";
@@ -29,63 +31,63 @@
 	var pickUser = 10;
 		
 	
-	//For loop to create records
+	//For loop para criar registros
 		for (i = 0; i < recordsToMake; i++) {
 			
-			//Create an empty record for the NeedIt table
+			//Crie um registro vazio para a tabela NeedIt
 			genNIRec = new GlideRecord(tableName);
 			genNIRec.newRecord();
 			
 	
-			//Select a random value from the requestType array and set the Request Type field value (choice)
+			//Selecione um valor aleatório da matriz requestType e defina o valor do campo Tipo de Solicitação (opção)
 			selectRequestType = requestTypeArray[(Math.floor(Math.random() * 3))];
 			genNIRec.setValue("u_request_type",selectRequestType);
 			
 			
-			//Set the What needed field value (choice) from the Request Type and either 1 or 2
+			//Defina o valor do campo O que é necessário (escolha) em Tipo de solicitação e 1 ou 2
 			selectWhatNeeded = (Math.floor(Math.random()*2) +1);		
 			genNIRec.setValue("u_what_needed",selectRequestType + selectWhatNeeded);
 			
-			//Set the Short description field value (string)
+			//Defina o valor do campo de descrição resumida (string)
 			genNIRec.setValue("short_description", "Automatically created NeedIt request: " + selectRequestType + ", " + selectRequestType + selectWhatNeeded);
 			
-			//Set the When needed field value (date/time) to a date between six months from now and six months ago
+			//Defina o valor do campo Quando necessário (data / hora) para uma data entre seis meses a partir de agora e seis meses atrás
 			var rightNow = new GlideDateTime();		
 			pickDate = (Math.floor(Math.random() * 366) - 182);
 			rightNow.addDaysUTC(pickDate);		
 			genNIRec.setValue("u_when_needed",rightNow.getDate());
 			
 			
-			//Set the Requested for field value (reference) by selecting a random user from requestedForArray.
-			//Also set the Requested for email field value (string).  The reference field cannot be set in a scoped app
-			//using the setValue method unless using the sys_id to set the field value.  To set by display name, use 
-			//the GlideElement setDisplayValue method.  gr.<field_name>.setDisplayValue(<value>). 
+			//Defina o valor do campo Requested for (referência), selecionando um usuário aleatório de requestForArray.
+			//Defina também o valor do campo Requested for email (string). O campo de referência não pode ser definido em um aplicativo com escopo
+			//usando o método setValue, a menos que use sys_id para definir o valor do campo. Para definir por nome de exibição, use
+			//o método GlideElement setDisplayValue. gr. <field_name> .setDisplayValue (<value>).
 			pickUser = (Math.floor(Math.random()*3));
 			genNIRec.u_requested_for.setDisplayValue(requestedForArray[pickUser].name);
 			genNIRec.setValue("u_requested_for_email",requestedForArray[pickUser].email.toString());
 			
 			
-			//Set the Priority field value (choice) to a random value
+			//Defina o valor do campo Prioridade (escolha) para um valor aleatório
 			genNIRec.setValue("priority",(Math.floor(Math.random()*5)+1));
 			
-			//Set the State field value (choice) to Requested
+			//Defina o valor do campo Estado (opção) como Solicitado
 			genNIRec.setValue("state",13);
 			
-			//Insert the new NeedIt record into the table
+			//Insira o novo registro NeedIt na tabela
 			genNIRec.insert();
 	}]]></script>
         <sys_class_name>sysauto_script</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2019-07-24 14:53:58</sys_created_on>
         <sys_id>5436a992db763f00651e5011ce96191b</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_name>Generate Random NeedIt Records</sys_name>
         <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
         <sys_policy/>
         <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
         <sys_update_name>sysauto_script_5436a992db763f00651e5011ce96191b</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2019-07-24 14:53:58</sys_updated_on>
+        <sys_updated_on>2021-01-18 12:25:52</sys_updated_on>
         <time_zone/>
         <upgrade_safe>false</upgrade_safe>
     </sysauto_script>
